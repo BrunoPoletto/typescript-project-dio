@@ -1,21 +1,9 @@
-// Um desenvolvedor tentou criar um projeto que consome a base de dados de filme do TMDB para criar um organizador de filmes, mas desistiu 
-// pois considerou o seu código inviável. Você consegue usar typescript para organizar esse código e a partir daí aprimorar o que foi feito?
-
-// A ideia dessa atividade é criar um aplicativo que: 
-//    - Busca filmes
-//    - Apresenta uma lista com os resultados pesquisados
-//    - Permite a criação de listas de filmes e a posterior adição de filmes nela
-
-// Todas as requisições necessárias para as atividades acima já estão prontas, mas a implementação delas ficou pela metade (não vou dar tudo de graça).
-// Atenção para o listener do botão login-button que devolve o sessionID do usuário
-// É necessário fazer um cadastro no https://www.themoviedb.org/ e seguir a documentação do site para entender como gera uma API key https://developers.themoviedb.org/3/getting-started/introduction
-
-var apiKey: string = '7b5ead9e385de8d65f834ec2cc2133c2';
+var apiKey: string;
 var requestToken: string;
-var username: string = 'Kubilla'
-var password: string = 'EvraeAltana82465'
+var username: string;
+var password: string;
 var sessionId: string;
-var listId: string | number = '8210719';
+var listId: string | number;
 var listName: string;
 var description: string;
 var filmeId: string | number;
@@ -60,7 +48,6 @@ searchButton?.addEventListener('click', async () => {
     li.className = 'blue';
     li.appendChild(document.createTextNode(item.original_title));
     ul.appendChild(li);
-     //Tudo abaixo daqui é experimental, NÃO MEXE EM CIMA PRA NÃO QUEBRAR NADA
      li.addEventListener('mouseover', () => {
       li.className = '';
       li.style.background = 'white';
@@ -344,16 +331,3 @@ async function pegarLista(listId: string | number) {
   console.log(result);
   return result;
 }
-
-{/* <div style="display: flex;">
-  <div style="display: flex; width: 300px; height: 100px; justify-content: space-between; flex-direction: column;">
-      <input id="login" placeholder="Login" onchange="preencherLogin(event)">
-      <input id="senha" placeholder="Senha" type="password" onchange="preencherSenha(event)">
-      <input id="api-key" placeholder="Api Key" onchange="preencherApi()">
-      <button id="login-button" disabled>Login</button>
-  </div>
-  <div id="search-container" style="margin-left: 20px">
-      <input id="search" placeholder="Escreva...">
-      <button id="search-button">Pesquisar Filme</button>
-  </div>
-</div>*/}
