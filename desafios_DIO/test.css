@@ -1,0 +1,10 @@
+.blue-new-list {
+    display: flex;
+    justify-content: center;
+    color: darkred;
+    border: 2px solid darkblue;
+    border-radius: 5px;
+    background-color: rgb(193, 227, 243);
+    width: 400px;
+    font-weight: bold;
+}
